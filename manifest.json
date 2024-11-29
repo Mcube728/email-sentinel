@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Gmail Link Extractor",
+  "name": "PhishShield",
   "version": "1.0",
   "description": "Extracts all links from the body of an opened Gmail email.",
   "permissions": ["scripting", "activeTab"],
