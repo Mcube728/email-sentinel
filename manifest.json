@@ -1,19 +1,21 @@
 {
-    "name": "email_sentinel",
-    "description": "Detects any phishing links in your emails.",
-    "version": "0.1",
-    "manifest_version": 3,
-
-    "icons": {
-        "16": "images/icon16.png",
-        "32": "images/icon32.png",
-        "48": "images/icon48.png",
-        "128": "images/icon128.png"
-    },
-
-    "action": {
-        "default_popup": "html/popup.html"
-    },
-
-    "permissions": ["activeTab", "scripting"]
+  "manifest_version": 3,
+  "name": "Gmail Link Extractor",
+  "version": "1.0",
+  "description": "Extracts all links from the body of an opened Gmail email.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://mail.google.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
 }
